@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Muslim Athletic Association</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/logos/M.ico" rel="icon">
+  <!-- <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- link to the SqPaymentForm library -->
+  <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"></script>
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="mysqpaymentform.css">
+
+
+  <!-- Template Main CSS File -->
+  <link href="./registration.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Restaurantly - v1.1.0
+  * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top" style="margin-bottom:5%;">
+    <div class="container d-flex align-items-center">
+
+      <a href="../index.html" class="logo mr-auto"><img src="../assets/img/logos/MAAlogo.png" alt=""
+          class="img-fluid"></a>
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Muslim Athletic Association</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <br>
+  <br>
+  <br>
+
+  <!-- ======= Book A Table Section ======= -->
+  <section id="book-a-table" class="book-a-table">
+    <div class="container" data-aos="fade-up">
+      <p>Currently, only registration for our Men's 18+ Soccer League is open.</p>
+      <p>If you think there is a mistake or have any questions please email us at info@maaweb.org.</p>
+      <div class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+        <div class="form-row">
+          <div class="col-lg-4 col-md-6 form-group">
+            <div class="register-drowdown">
+              <select id="choices" name="choices">
+                <option selected disabled hidden>Choose an option</option>
+                <option value="create-team">Create a new team</option>
+                <option value="register-for-team">Register for a team</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="infoForm" action='' method="post" role="form" class="php-email-form" data-aos="fade-up"
+        data-aos-delay="100">
+        <div class="section-title">
+          <h2>Team and Captain Information</h2>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-4 col-md-6 form-group">
+            <label>First Name</label>
+            <input type="text" name="firstName" class="form-control" required id="firstName"
+              placeholder="Your First Name" data-rule="minlen:1" data-msg="Please enter at least 1 char">
+            <div class="validate"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 form-group">
+            <label>Last Name</label>
+            <input type="text" name="lastName" class="form-control" id="lastName" required placeholder="Your Last Name"
+              data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+            <div class="validate"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 form-group">
+            <label>Phone</label>
+            <input type="text" class="form-control" name="phone" required id="phone" placeholder="Your Phone"
+              data-rule="minlen:10" data-msg="Please enter a valid phone number">
+            <div class="validate"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" id="email" required placeholder="Your Email"
+              data-rule="email" data-msg="Please enter a valid email">
+            <div class="validate"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 form-group">
+            <label>Birthday</label>
+            <input type="date" class="form-control" name="age" id="birthday" placeholder="Your Birthday" required
+              min="1920-01-01" max='2021-01-01' data-msg="Please enter a valid birthday">
+            <div class="validate"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 form-group">
+            <label>Team Name </label>
+            <input type='text' class="form-control" name='team-name' id='team-name' data-rule="minlen:3" required
+              placeholder="Team Name" data-msg="Please enter a team name"></input>
+            <div class="validate"></div>
+          </div>
+
+          <div class="program-waivers form-group">
+            <!-- <div class="section-title">
+              <h2>Waiver</h2>
+            </div> -->
+
+            <!-- <div class='waiver'>
+              <iframe class="register-terms" src="../assets/waivers/soccerMensOver18.txt"></iframe>
+            </div> -->
+            <br>
+            <p>
+              <i class="icofont-check-circled"></i> I will ensure that all players on my team (including me) have registered and accepted the liablity
+              waivers when individual registration opens.</p>
+            </p><i class="icofont-check-circled"></i> I will ensure that my team abides by the rules listed below along with any rules that the MAA staff and
+              admin require me to follow.
+            </p>
+            <input type="checkbox" id="terms" required name="terms"><label for="terms"> I agree to all of the above.
+            </label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="loading">Loading</div>
+          <div class="error-message"></div>
+          <div class="sent-message">Your registration request was sent. We will send an Email to confirm your
+            registration. Thank you!</div>
+        </div>
+        <div class="text-center"><button type="submit" onclick="validateProgram()">Register</button></div>
+      </div>
+
+      <div id="no-program">Individual registration is still not open. Contact <strong>info@maaweb.org</strong>
+        for more information.</div>
+
+      <br>
+      <br>
+
+      <u><h5>What you need to know about our league during COVID 19 – Stage 3:</h5></u>
+      <br>
+      <ul>
+        <p><i class="icofont-check-circled"></i> The Safety of our Players and our staff is and always will be MAA's highest priority </p>
+        <p><i class="icofont-check-circled"></i> 50 players per division</p>
+        <p><i class="icofont-check-circled"></i> So far, we are hosting two different divisions under the same league (first come first serve)</p>
+        <p><i class="icofont-check-circled"></i> Only 4 teams per division, each team can have a maximum number of 12 players. (50 players Max per Division)
+        </p>
+        <p><i class="icofont-check-circled"></i> During corner kicks, the box shall not be crowded</p>
+        <p><i class="icofont-check-circled"></i> Players/ teams cannot transfer or move between other divisions within the same league</p>
+        <br>
+      </ul>
+      <u><h5>Rules of the league during COVID 19 - Stage 3: </h5></u>
+      <br>
+      <ul>
+        <p><i class="icofont-check-circled"></i> Each Division to play their games during different times anywhere between 5:00PM – 9:00PM (alternate)</p>
+        <p><i class="icofont-check-circled"></i> One game per week 50mins duration (25 each half)</p>
+        <p><i class="icofont-check-circled"></i> 8 weeks – 6 regular home/away games + 2 playoffs</p>
+        <p><i class="icofont-check-circled"></i> No handshakes before or after games (elbow bump, post-game salutes or a simple wave will do)</p>
+        <p><i class="icofont-check-circled"></i> Goalie gloves are now mandatory in Soccer.</p>
+        <p><i class="icofont-check-circled"></i> Balls, Goal-Posts poles will be wiped down with disinfectants by the on-site before and after games</p>
+        <p><i class="icofont-check-circled"></i> Spitting is an automatic red card – will only be coordinated by the referees.</p>
+        <p><i class="icofont-check-circled"></i> Hand Sanitizing of every player will be conducted prior to every game.</p>
+        <p><i class="icofont-check-circled"></i> If you are not at the field at the start of the game, then you will have to wait for a stoppage and a
+          Temperature check prior to entering the field of play.</p>
+        <p><i class="icofont-check-circled"></i> Temperature Checks of every player will be conducted by MAA personnel prior to every game.</p>
+        <p><i class="icofont-check-circled"></i> If you are not feeling well, stay home, your team can win for you :)</p>
+        <p><i class="icofont-check-circled"></i> For more information, please read the by-law posted by Health Canada</p>
+      </ul>
+
+    </div>
+  </section><!-- End Book A Table Section -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <!-- <script src="../assets/vendor/php-email-form/validate.js"></script> -->
+  <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/soccerRegister.js"></script>
+
+</body>
+
+</html>
