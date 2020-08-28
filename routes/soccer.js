@@ -19,6 +19,21 @@ function setResult(d, pass, msg, code) {
     return { data: d, error: msg, success: pass, ecode: code };
 }
 
+function setResponse(response) {
+    console.log(response)
+    if (response.success) {
+        console.log("Success!")
+        res.status(200);
+    } else if (response.ecode == errorEnum.UNIQUE) {
+        console.log("Failure!");
+        res.status(403);
+    } else {
+        console.log("Server error!")
+        res.status(500)
+    }
+    res.json(response);
+}
+
 var divisions;
 soccer.getDivisions().then(divs => { divisions = divs });
 
@@ -45,24 +60,22 @@ router.get('/api/soccer/getPlayers', (req, res) => {
     soccer.getPlayers(callBack);
 })
 
-router.get('/api/soccer/getTeams', async function (req, res) {
+router.get('/api/soccer/getTeamNames', async function (req, res) {
     //Return all teams information.
     res.header('Access-Control-Allow-Origin', '*');
     var status = 200;
-    var teams = {};
-    await soccer.getTeams(price).then((t) => {
-        teams = t;
-        console.log(t);
+    var gtnRes = await soccer.getTeamNames().then((response) => {
+        console.log("Team Names: ", response)
+        return response;
     });
-    res.status(status);
-    res.json(teams);
+    setResponse(gtn);
 })
 
 router.get('/api/soccer/getCaptain', () => {
 
 })
 
-router.post('/api/soccer/createTeam', async function createTeamCallback (req, res) {
+router.post('/api/soccer/createTeam', async function createTeamCallback(req, res) {
     // returns member information in json format if successful
     res.header('Access-Control-Allow-Origin', '*');
     var team = await member.register(req.body).then(async function createTeamResponse(result) {
@@ -72,15 +85,15 @@ router.post('/api/soccer/createTeam', async function createTeamCallback (req, re
     }).then((response) => {
         console.log(response)
         if (response.success) {
-	    console.log("Success!")
+            console.log("Success!")
             res.status(200);
         } else if (response.ecode == errorEnum.UNIQUE) {
             console.log("Failure");
-	    res.status(403);
+            res.status(403);
         } else {
             res.status(500)
         }
-	console.log(response)
+        console.log(response)
         res.json(response);
 
     });

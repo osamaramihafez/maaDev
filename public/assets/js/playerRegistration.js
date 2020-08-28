@@ -4,9 +4,7 @@ var programs = {};
 var program = {};
 
 $(document).ready(function () {
-  // getTeams();
-  $('#infoForm').hide();
-  $(".checkout-payment").hide();
+  getTeams();
 });
 
 function getTeams() {
@@ -18,28 +16,18 @@ function getTeams() {
   // dropdown.prop('selectedIndex', 0);
 
   $.ajax({
-    url: "https://35.170.107.130:3001/api/getPaidTeams",
+    url: "https://35.170.107.130:3001/api/soccer/getTeams",
     method: "GET",
     type: "https"
   }).done((res) => {
     console.log(res);
-    teams = res;
+    teams = res.data;
     $.each(data, function (key, team) {
       dropdown.append($('<option></option>').attr('value', team.name).text(team.name));
     })
-  })
-}
-
-function hideForm() {
-  $('#infoForm').hide(400);
-  $('#no-program').show(400);
-  $(".checkout-payment").hide();
-}
-
-function showForm() {
-  $('#infoForm').show(400);
-  $('#no-program').hide();
-  $(".checkout-payment").hide();
+  }).catch(
+    console.log("Registration failed.", res);
+  )
 }
 
 function validateProgram() {
@@ -75,15 +63,14 @@ function registerPlayer() {
     console.log(res);
     if (res.success == true) {
       console.log("Registration successful!");
-      // showPayment();
-      window.location.replace("https://checkout.square.site/pay/5bb01fdb13cb43a1a2c7d5b48e45a2f4")
+      window.location.replace("./thanks.html");
     } else {
       console.log("Registration failed.");
-      $('.error-message').slideDown().html(res.error + '<br> Please contact us at info@maaweb.org.');
+      $('.error-message').slideDown().html(res.error + '<br> Please contact us at info@maaweb.org if you think there is an issue.');
     }
   }).catch(() => {
     console.log("Registration failed.", res);
-    $('.error-message').slideDown().html(res.error + '<br> Please contact us at info@maaweb.org.');
+    $('.error-message').slideDown().html(res.error + '<br> Please contact us at info@maaweb.org if you think there is an issue.');
   })
 }
 

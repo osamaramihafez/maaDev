@@ -35,19 +35,15 @@ module.exports.getDivisions = async function getDivisions() {
     })
 }
 
-module.exports.getTeams = async function getTeams() {
+module.exports.getTeamNames = async function getTeamNames() {
     var teams = {};
-    sql = 'SELECT * FROM teams;';
+    sql = 'SELECT name FROM teams;';
     return await db.query(sql).then(result => {
         if (result.rows[0] == null) {
-            console.log("There are no teams that have paid yet.");
-            return setResult(EMPTY, false, "Teams table seems to be empty.", errorEnum.DNE);
+            console.log("No team names have been fetched from the database.");
+            return setResult(EMPTY, false, "No team names could be fetched from the database.", errorEnum.DNE);
         }
-        result.rows.forEach(team => {
-            teams[team.name] = new Team(team);
-            console.log("Successfully fetched paid team " + team.name);
-        })
-        return setResult(teams, true, "Failed to fetch teams.", errorEnum.NONE);
+        return setResult(res.rows, true, "Team names fetched.", errorEnum.NONE);
     }).catch(e => {
         console.log("\nERROR! in getTeams\n", e);
         return setResult(EMPTY, false, "Failed to fetch teams.", errorEnum.UNKNOWN);
